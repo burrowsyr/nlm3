@@ -12,7 +12,7 @@ The first published burrows version is 3.0.0 beta 6, all future versions will be
 INSTALLATION INSTRUCTIONS:
 --------------------------------------
 
-~~Copy both dll files from \NestedLayerManager\bin to C:\Program Files\Autodesk\MAXINSTALLDIR\bin\assemblies ~~
+~~Copy both dll files from \NestedLayerManager\bin to C:\Program Files\Autodesk\MAXINSTALLDIR\bin\assemblies~~
 As of 3.0.0 beta 6 the dlls have been combined into one for ease of deployment.
 
 Open 3ds Max and navigate to: Customise > Customise User Interface.
