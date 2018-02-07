@@ -7,3 +7,12 @@ Y:\Personal\Tim\Tools\Nested_Layer_Manager_3\ObjectListView\obj\Max2015Debug\Bri
 Y:\Personal\Tim\Tools\Nested_Layer_Manager_3\ObjectListView\obj\Max2015Debug\ObjectListView2012.csproj.GenerateResource.Cache
 Y:\Personal\Tim\Tools\Nested_Layer_Manager_3\ObjectListView\obj\Max2015Debug\ObjectListView.dll
 Y:\Personal\Tim\Tools\Nested_Layer_Manager_3\ObjectListView\obj\Max2015Debug\ObjectListView.pdb
+C:\Users\clarkes\Documents\Visual Studio 2012\Projects\nlm3-master\ObjectListView\bin\Max2015Debug\ObjectListView.dll
+C:\Users\clarkes\Documents\Visual Studio 2012\Projects\nlm3-master\ObjectListView\bin\Max2015Debug\ObjectListView.pdb
+C:\Users\clarkes\Documents\Visual Studio 2012\Projects\nlm3-master\ObjectListView\bin\Max2015Debug\ObjectListView.XML
+C:\Users\clarkes\Documents\Visual Studio 2012\Projects\nlm3-master\ObjectListView\obj\Max2015Debug\ObjectListView2012.csprojResolveAssemblyReference.cache
+C:\Users\clarkes\Documents\Visual Studio 2012\Projects\nlm3-master\ObjectListView\obj\Max2015Debug\BrightIdeasSoftware.Properties.Resources.resources
+C:\Users\clarkes\Documents\Visual Studio 2012\Projects\nlm3-master\ObjectListView\obj\Max2015Debug\BrightIdeasSoftware.ColumnSelectionForm.resources
+C:\Users\clarkes\Documents\Visual Studio 2012\Projects\nlm3-master\ObjectListView\obj\Max2015Debug\ObjectListView2012.csproj.GenerateResource.Cache
+C:\Users\clarkes\Documents\Visual Studio 2012\Projects\nlm3-master\ObjectListView\obj\Max2015Debug\ObjectListView.dll
+C:\Users\clarkes\Documents\Visual Studio 2012\Projects\nlm3-master\ObjectListView\obj\Max2015Debug\ObjectListView.pdb

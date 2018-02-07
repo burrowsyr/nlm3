@@ -16,3 +16,12 @@ Y:\Personal\Tim\Tools\Nested_Layer_Manager_3\ObjectListView\obj\Release\BrightId
 Y:\Personal\Tim\Tools\Nested_Layer_Manager_3\ObjectListView\obj\Release\ObjectListView2012.csproj.GenerateResource.Cache
 Y:\Personal\Tim\Tools\Nested_Layer_Manager_3\ObjectListView\obj\Release\ObjectListView.dll
 Y:\Personal\Tim\Tools\Nested_Layer_Manager_3\ObjectListView\obj\Release\ObjectListView.pdb
+C:\Users\clarkes\Documents\Visual Studio 2012\Projects\nlm3-master\ObjectListView\bin\Release\ObjectListView.XML
+C:\Users\clarkes\Documents\Visual Studio 2012\Projects\nlm3-master\ObjectListView\bin\Release\ObjectListView.dll
+C:\Users\clarkes\Documents\Visual Studio 2012\Projects\nlm3-master\ObjectListView\bin\Release\ObjectListView.pdb
+C:\Users\clarkes\Documents\Visual Studio 2012\Projects\nlm3-master\ObjectListView\obj\Release\ObjectListView2012.csprojResolveAssemblyReference.cache
+C:\Users\clarkes\Documents\Visual Studio 2012\Projects\nlm3-master\ObjectListView\obj\Release\BrightIdeasSoftware.Properties.Resources.resources
+C:\Users\clarkes\Documents\Visual Studio 2012\Projects\nlm3-master\ObjectListView\obj\Release\BrightIdeasSoftware.ColumnSelectionForm.resources
+C:\Users\clarkes\Documents\Visual Studio 2012\Projects\nlm3-master\ObjectListView\obj\Release\ObjectListView2012.csproj.GenerateResource.Cache
+C:\Users\clarkes\Documents\Visual Studio 2012\Projects\nlm3-master\ObjectListView\obj\Release\ObjectListView.dll
+C:\Users\clarkes\Documents\Visual Studio 2012\Projects\nlm3-master\ObjectListView\obj\Release\ObjectListView.pdb

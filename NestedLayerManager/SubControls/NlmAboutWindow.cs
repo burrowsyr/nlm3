@@ -39,7 +39,9 @@ namespace NestedLayerManager.SubControls
                 Environment.NewLine,
                 "All content copyright 2014 Tim Hawker. Any trade names or logos shown are the trademarks of their respective owners.",
                 Environment.NewLine,
-                "www.timsportfolio.co.uk"
+                "www.timsportfolio.co.uk",
+                Environment.NewLine,
+                "Additional code 2016 Simon Clarke."
             );
             testLabel.Width = this.ClientSize.Width - 10;
             testLabel.Height = this.ClientSize.Height - NlmAboutHeader.Height;

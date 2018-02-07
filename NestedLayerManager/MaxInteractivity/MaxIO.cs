@@ -52,7 +52,6 @@ namespace NestedLayerManager.MaxInteractivity
     public static class MaxIO
     {
         #region Saving
-
         public static void SaveData(NlmTreeListView listView, NodeController nodeControl)
         {
             // Create folder and layer treeNode arrays.
@@ -67,6 +66,7 @@ namespace NestedLayerManager.MaxInteractivity
             SaveNlmData(listView);
         }
 
+
         public static void SaveFolderData(IEnumerable<FolderTreeNode> treeNodes, NlmTreeListView owner)
         {
             List<FolderData> folderData = new List<FolderData>();
@@ -77,6 +77,7 @@ namespace NestedLayerManager.MaxInteractivity
             IAnimatable rootNode = GlobalInterface.Instance.COREInterface.RootNode as IAnimatable;
             SetAppData(rootNode, DataAddress.FolderData, folderData);
         }
+
 
         public static void SaveLayerData(IEnumerable<LayerTreeNode> treeNodes, NlmTreeListView owner, HandleMap handleMap)
         {
@@ -96,6 +97,7 @@ namespace NestedLayerManager.MaxInteractivity
             }
         }
 
+
         private static void SaveParentFolderData(LayerTreeNode layerTreeNode, IAnimatable layerAnim, NlmTreeListView owner)
         {
             if (layerTreeNode.Parent != null)
@@ -111,20 +113,21 @@ namespace NestedLayerManager.MaxInteractivity
             }
         }
 
+
         public static void SaveNlmData(NlmTreeListView listView)
         {
             NlmData nlmData = new NlmData(listView);
             SetAppData(MaxNodes.RootNode, DataAddress.NlmData, nlmData);
         }
-
         #endregion
 
-        #region Loading
 
+        #region Loading
         public static LayerData LoadLayerData(IILayer layer)
         {
             return GetAppData(layer as IAnimatable, DataAddress.LayerData) as LayerData;
         }
+
 
         public static void LoadNlmData(NlmTreeListView listView)
         {
@@ -133,6 +136,7 @@ namespace NestedLayerManager.MaxInteractivity
                  NlmDataIO.RestoreNlmData(listView, nlmData);
         }
 
+
         public static List<FolderData> LoadFolderRootNodeData()
         {
             IAnimatable rootNode = GlobalInterface.Instance.COREInterface.RootNode as IAnimatable;
@@ -140,16 +144,16 @@ namespace NestedLayerManager.MaxInteractivity
             return folderDataNodes;
         }
 
+
         public static List<FolderData> LoadParentFolderData(IAnimatable layerAnim, NlmTreeListView owner)
         {
             List<FolderData> folderData = GetAppData(layerAnim, DataAddress.FolderData) as List<FolderData>;
             return folderData;
         }
-
         #endregion
 
-        #region AppData
 
+        #region AppData
         private static void SetAppData(IAnimatable anim, UInt32 address, Object obj)
         {
             RemoveAppData(anim, address);
@@ -161,10 +165,12 @@ namespace NestedLayerManager.MaxInteractivity
             }
         }
 
+
         private static void RemoveAppData(IAnimatable anim, UInt32 address)
         {
             Boolean result = anim.RemoveAppDataChunk(ClassID, SuperClassID, address);
         }
+
 
         private static Object GetAppData(IAnimatable anim, UInt32 address)
         {
@@ -173,19 +179,21 @@ namespace NestedLayerManager.MaxInteractivity
             if (chunk == null)
                 return null;
 
+            Object chunk_data = null;
             BinaryFormatter binForm = new BinaryFormatter();
+            binForm.Binder = new DeserialisationBinder();
             using (MemoryStream memStream = new MemoryStream())
             {
                 memStream.Write(chunk.Data, 0, chunk.Data.Length);
                 memStream.Seek(0, SeekOrigin.Begin);
-                return binForm.Deserialize(memStream);
+                chunk_data = (Object)binForm.Deserialize(memStream);
+                return chunk_data;
             }
         }
-
         #endregion
 
-        #region Static ID Methods / Properties
 
+        #region Static ID Methods / Properties
         public static SClass_ID SuperClassID
         {
             get
@@ -210,7 +218,6 @@ namespace NestedLayerManager.MaxInteractivity
             public const UInt32 FolderData = 2;
             public const UInt32 NlmData = 3;
         }
-
         #endregion
     }
 }

@@ -54,7 +54,7 @@ namespace NestedLayerManager.AspectEngines
                 if (maxLayer != null)
                     return !maxLayer.BoxMode;
 #endif
-#if Max2015
+#if Max2015 || Max2016
                 if (maxLayer != null) 
                     return !maxLayer.BoxMode_;
 #endif
@@ -72,7 +72,7 @@ namespace NestedLayerManager.AspectEngines
 #if Max2013 || Max2014
                 if (maxLayer != null) maxLayer.BoxMode = !(Boolean)newValue;
 #endif
-#if Max2015
+#if Max2015 || Max2016
                 if (maxLayer != null) maxLayer.BoxMode(!(Boolean)newValue, false);
 #endif
                 return;

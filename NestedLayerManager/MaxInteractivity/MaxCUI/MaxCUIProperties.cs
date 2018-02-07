@@ -59,7 +59,7 @@ namespace NestedLayerManager.MaxInteractivity.MaxCUI
         {
             get
             {
-                return "3.0.0 Beta 5";
+                return "3.0.0 Beta 6";
             }
         }
     }

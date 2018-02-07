@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>NestedLayerManager</RootNamespace>
     <AssemblyName>NestedLayerManager</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -22,6 +22,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>x64</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -31,15 +32,17 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>x64</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Max2013|AnyCPU'">
-    <OutputPath>bin\Max2013\</OutputPath>
-    <DefineConstants>TRACE;Max2013</DefineConstants>
+    <OutputPath>bin\Max2016\</OutputPath>
+    <DefineConstants>TRACE;Max2016</DefineConstants>
     <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
     <PlatformTarget>x64</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Max2015|AnyCPU'">
     <OutputPath>bin\Max2015\</OutputPath>
@@ -49,6 +52,7 @@
     <PlatformTarget>x64</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Max2014|AnyCPU'">
     <OutputPath>bin\Max2014\</OutputPath>
@@ -58,6 +62,7 @@
     <PlatformTarget>x64</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Max2013Debug|AnyCPU'">
     <OutputPath>bin\Max2013Debug\</OutputPath>
@@ -67,6 +72,7 @@
     <PlatformTarget>x64</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Max2014Debug|AnyCPU'">
     <OutputPath>bin\Max2014Debug\</OutputPath>
@@ -76,6 +82,7 @@
     <PlatformTarget>x64</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Max2015Debug|AnyCPU'">
     <OutputPath>bin\Max2015Debug\</OutputPath>
@@ -85,6 +92,13 @@
     <PlatformTarget>x64</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Max2016|AnyCPU'">
+    <OutputPath>bin\Max2016\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;Max2016</DefineConstants>
+    <PlatformTarget>x64</PlatformTarget>
+    <Optimize>true</Optimize>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AssemblyLoader">
@@ -94,6 +108,9 @@
     <Reference Include="Autodesk.Max, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Autodesk.Max.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Autodesk.Max.Wrappers, Version=0.0.0.0, Culture=neutral, processorArchitecture=AMD64">
       <Private>False</Private>
     </Reference>
     <Reference Include="CSharpUtilities">
@@ -109,11 +126,11 @@
       <HintPath>..\..\ManagedServices.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="MaxCustomControls, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\MaxCustomControls.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
+    <Reference Include="MaxCustomControls, Version=18.3.490.0, Culture=neutral, processorArchitecture=AMD64" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="UiViewModels">
       <HintPath>..\..\UiViewModels.dll</HintPath>
@@ -137,9 +154,14 @@
     <Compile Include="Events\CustomArgs\ClickEventArgs.cs" />
     <Compile Include="Events\KeyEvents.cs" />
     <Compile Include="FilterEngine\Filters\BaseTreeNodeFilter.cs" />
+    <Compile Include="IO\Data\Nlm2CustAttrib.cs" />
+    <Compile Include="IO\Data\SettingsData.cs" />
+    <Compile Include="IO\NlmSettings.cs" />
     <Compile Include="IO\Data\FolderData.cs" />
     <Compile Include="IO\Data\NlmData.cs" />
+    <Compile Include="IO\DeserialisationBinder.cs" />
     <Compile Include="IO\NlmDataIO.cs" />
+    <Compile Include="IO\ReadWriteNLM2Data.cs" />
     <Compile Include="MaxInteractivity\MaxCUI\MaxCUIProperties.cs" />
     <Compile Include="MaxInteractivity\MaxEvents\Args\SystemNotificationObjectEventArgs.cs" />
     <Compile Include="MaxInteractivity\MaxEvents\Args\SystemNotificationAnimEventArgs.cs" />
@@ -154,6 +176,7 @@
     <Compile Include="MaxInteractivity\MaxInterfaces.cs" />
     <Compile Include="MaxInteractivity\MaxIO.cs" />
     <Compile Include="MaxInteractivity\MaxListener.cs" />
+    <Compile Include="MaxInteractivity\MaxLogger.cs" />
     <Compile Include="MaxInteractivity\MaxUI.cs" />
     <Compile Include="MouseClick\MouseLeftClick.cs" />
     <Compile Include="Maps\HandleMap.cs" />
@@ -192,7 +215,18 @@
     <Compile Include="MaxInteractivity\MaxCUI\MaxDockCUI.cs" />
     <Compile Include="Imaging\NodeClassImageList.cs" />
     <Compile Include="Events\ClickEvents.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Renderers\DisabledNodeStyle.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SubControls\NlmCheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SubControls\NlmGroupBox.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="SubControls\NlmButtonPanelLeft.cs">
@@ -264,6 +298,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Icons\Buttons\AddSelectedObjectsToLayer.png" />
     <EmbeddedResource Include="Resources\Icons\Buttons\CollapseExpandAll.png" />
     <EmbeddedResource Include="Resources\Icons\Buttons\CreateFolder.png" />
@@ -314,16 +352,20 @@
     <ProjectReference Include="..\ObjectListView\ObjectListView2012.csproj">
       <Project>{18feda0c-d147-4286-b39a-01204808106a}</Project>
       <Name>ObjectListView2012</Name>
+      <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Readme.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <EmbeddedResource Include="ObjectListView.dll" />
     <Content Include="Resources\Icons\Buttons\isolate-selected.png" />
     <EmbeddedResource Include="Resources\Logos\NestedLayerManagerLogo.png" />
     <EmbeddedResource Include="Resources\Icons\Buttons\IsolateSelection.png" />
+    <EmbeddedResource Include="Resources\MaxScript\NLM2RootProps.ms" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

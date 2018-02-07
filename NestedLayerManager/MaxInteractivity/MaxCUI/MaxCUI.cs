@@ -91,6 +91,7 @@ namespace NestedLayerManager.MaxInteractivity.MaxCUI
 
         public void Dispose()
         {
+            MaxListener.PrintToListener("==== Disposing MaxCUI ====");
             NestedLayerManager.Dispose();
             MaxForm.Dispose();
         }

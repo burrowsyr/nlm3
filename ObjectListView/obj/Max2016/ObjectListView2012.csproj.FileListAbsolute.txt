@@ -1,0 +1,6 @@
+C:\Users\clarkes\Documents\Visual Studio 2012\Projects\nlm3-master\ObjectListView\bin\Max2016\ObjectListView.dll
+C:\Users\clarkes\Documents\Visual Studio 2012\Projects\nlm3-master\ObjectListView\obj\Max2016\ObjectListView2012.csprojResolveAssemblyReference.cache
+C:\Users\clarkes\Documents\Visual Studio 2012\Projects\nlm3-master\ObjectListView\obj\Max2016\BrightIdeasSoftware.Properties.Resources.resources
+C:\Users\clarkes\Documents\Visual Studio 2012\Projects\nlm3-master\ObjectListView\obj\Max2016\BrightIdeasSoftware.ColumnSelectionForm.resources
+C:\Users\clarkes\Documents\Visual Studio 2012\Projects\nlm3-master\ObjectListView\obj\Max2016\ObjectListView2012.csproj.GenerateResource.Cache
+C:\Users\clarkes\Documents\Visual Studio 2012\Projects\nlm3-master\ObjectListView\obj\Max2016\ObjectListView.dll

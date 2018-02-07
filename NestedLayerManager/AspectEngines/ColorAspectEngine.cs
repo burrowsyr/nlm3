@@ -82,7 +82,7 @@ namespace NestedLayerManager.AspectEngines
 #if Max2013 || Max2014
                     maxLayer.WireColor = (Color)newValue;
 #endif
-#if Max2015
+#if Max2015 || Max2016
                    maxLayer.SetWireColor((Color)newValue, false);
 #endif
                 }

@@ -86,8 +86,8 @@ namespace NestedLayerManager.MaxInteractivity.MaxAnims
 #if Max2013 || Max2014
             return GlobalInterface.Instance.COREInterface14.LayerManager.GetLayer(ref name);
 #endif
-#if Max2015
-            return GlobalInterface.Instance.COREInterface14.LayerManager.GetLayer(name);
+#if Max2016
+            return GlobalInterface.Instance.COREInterface16.LayerManager.GetLayer(name);
 #endif
         }
 
@@ -186,8 +186,8 @@ namespace NestedLayerManager.MaxInteractivity.MaxAnims
                 layer.IsHidden = isHidden;
 #endif
 
-#if Max2015
-                    layer.Hide(isHidden, false);
+#if Max2015 || Max2016
+                layer.Hide(isHidden, false);
 #endif
             }
 
@@ -218,7 +218,7 @@ namespace NestedLayerManager.MaxInteractivity.MaxAnims
                 layer.IsFrozen = isFrozen;
 #endif
 
-#if Max2015
+#if Max2015 || Max2016
                     layer.Freeze(isFrozen, false);
 #endif
             }

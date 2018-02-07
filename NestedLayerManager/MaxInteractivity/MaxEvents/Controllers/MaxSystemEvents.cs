@@ -27,6 +27,7 @@ namespace NestedLayerManager.MaxInteractivity.MaxEvents.Controllers
 
         private NlmTreeListView ListView;
         private NodeController NodeControl;
+        private NlmSettings Settings;
 
         public SystemNotificationObjectHandler FilePreSave;
         public SystemNotificationObjectHandler SystemPreReset;
@@ -46,6 +47,7 @@ namespace NestedLayerManager.MaxInteractivity.MaxEvents.Controllers
             // Set properties.
             ListView = listView;
             NodeControl = nodeControl;
+            Settings = ListView.Settings;
 
             // Create Events
             FilePreSave = new SystemNotificationObjectHandler(SystemNotificationCode.FilePreSave);
@@ -85,7 +87,12 @@ namespace NestedLayerManager.MaxInteractivity.MaxEvents.Controllers
 #if DEBUG
             MaxListener.PrintToListener("onFilePreSave");
 #endif
-            MaxIO.SaveData(ListView, NodeControl);
+            if (Settings.writeNLM2){
+                NodeControl.Create.NLM2.writeNLMProp( ListView, NodeControl );
+            }
+            else{
+                MaxIO.SaveData(ListView, NodeControl);
+            }
         }
 
         private void onSystemPreReset(Object sender, SystemNotificationObjectEventArgs e)
@@ -147,7 +154,7 @@ namespace NestedLayerManager.MaxInteractivity.MaxEvents.Controllers
                 }
 
                 // Check each new layer for any folder data saved on the attribute.
-                // If any data exists, append it ot folderDataList.
+                // If any data exists, append it to folderDataList.
                 List<BaseTreeNode> treeNodeList = new List<BaseTreeNode>();
                 List<FolderData> folderDataList = new List<FolderData>();
                 foreach (IILayer layer in newLayers)
@@ -194,6 +201,7 @@ namespace NestedLayerManager.MaxInteractivity.MaxEvents.Controllers
 
         public void Dispose()
         {
+            MaxListener.PrintToListener( "==== Disposing MaxSystemEvents ====" );
             FilePreSave.Dispose();
             SystemPreReset.Dispose();
             SystemPostReset.Dispose();

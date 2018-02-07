@@ -11,6 +11,7 @@ using NestedLayerManager.MaxInteractivity.MaxAnims;
 using NestedLayerManager.Maps;
 using NestedLayerManager.Nodes;
 using NestedLayerManager.Nodes.Base;
+using NestedLayerManager.IO;
 using NestedLayerManager.IO.Data;
 
 namespace NestedLayerManager.NodeControl.Engines
@@ -19,14 +20,34 @@ namespace NestedLayerManager.NodeControl.Engines
     {
         private NlmTreeListView ListView;
         private HandleMap HandleMap;
+        public  ReadWriteNLM2Data NLM2;
+        private NlmSettings Settings;
 
         public NodeCreateEngine(NlmTreeListView listView, HandleMap handleMap)
         {
             ListView = listView;
             HandleMap = handleMap;
+            Settings = ListView.Settings;
+            //MaxListener.PrintToListener(ListView);
+            //Settings = NLM.Settings;
+            
         }
 
+
+
         #region Initilise Scene Tree
+        private List<FolderData> loadFolderRootNodeData()
+        {
+            NLM2 = new ReadWriteNLM2Data();
+            if (  Settings.readNLM2 && NLM2.getNLMProp())
+            {
+                MaxListener.PrintToListener( "Loading Folder rootNode Data..." );
+                return NLM2.buildFolderRootNodeData( ListView );
+            }
+            return MaxIO.LoadFolderRootNodeData();
+        }
+
+
 
         public void BuildSceneTree()
         {
@@ -35,7 +56,7 @@ namespace NestedLayerManager.NodeControl.Engines
             // The hashtable is used to reparent nodes using stored parent ID's.
             List<BaseTreeNode> treeNodeList = new List<BaseTreeNode>();
             Hashtable folderNodeIdMap = new Hashtable();
-            List<FolderData> folderNodeDataList = MaxIO.LoadFolderRootNodeData();
+            List<FolderData> folderNodeDataList = loadFolderRootNodeData();
 
             // These methods add the nodes to the tree node list.
             if (folderNodeDataList != null)
@@ -52,6 +73,8 @@ namespace NestedLayerManager.NodeControl.Engines
             // And now sort :)
             ListView.Sort(ListView.NlmColumns.NameColumn, SortOrder.Ascending);
         }
+
+
 
         public void BuildFolderNodes(List<BaseTreeNode> treeNodeList, List<FolderData> folderNodeDataList, Hashtable folderNodeIdMap)
         {
@@ -96,12 +119,26 @@ namespace NestedLayerManager.NodeControl.Engines
             }
         }
 
+
+
+        private LayerData loadLayerData(IILayer layer)
+        {
+            if (  Settings.readNLM2 && NLM2.getNLMProp() ) 
+            {
+                MaxListener.PrintToListener( "Loading NLM2 Layer Data..." );
+                return NLM2.buildLayerData( layer );
+            }
+            return MaxIO.LoadLayerData(layer);
+        }
+
+
+
         public void BuildLayerAndObjectNodes(List<BaseTreeNode> treeNodeList, IEnumerable<IILayer> layers, Hashtable folderNodeIdMap)
         {
             foreach (IILayer layer in layers)
             {
                 UIntPtr handle = MaxAnimatable.GetHandleByAnim(layer);
-                LayerData layerNodeData = MaxIO.LoadLayerData(layer);
+                LayerData layerNodeData = loadLayerData(layer);
 
                 // If layer has node data, create treeNode based on that.
                 // If not, create a new treeNode and append to root.
@@ -157,6 +194,8 @@ namespace NestedLayerManager.NodeControl.Engines
             }
         }
 
+
+
         private void BuildChildObjects(LayerTreeNode layerTreeNode, IILayer maxLayer)
         {
             IEnumerable<IINode> layerNodes = MaxLayers.GetChildNodes(maxLayer);
@@ -167,6 +206,8 @@ namespace NestedLayerManager.NodeControl.Engines
                 ListView.NodeControl.Parent.AddChild(objectTreeNode, layerTreeNode, false);
             }
         }
+
+
 
         public void AddMissingChildObjects(IEnumerable<LayerTreeNode> layerNodes)
         {
@@ -187,7 +228,6 @@ namespace NestedLayerManager.NodeControl.Engines
                 }
             }
         }
-
         #endregion
     }
 }

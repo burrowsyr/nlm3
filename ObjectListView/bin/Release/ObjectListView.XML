@@ -9014,6 +9014,31 @@
               resource lookups using this strongly typed resource class.
             </summary>
         </member>
+        <member name="P:BrightIdeasSoftware.Properties.Resources.ClearFiltering">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:BrightIdeasSoftware.Properties.Resources.ColumnFilterIndicator">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:BrightIdeasSoftware.Properties.Resources.Filtering">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:BrightIdeasSoftware.Properties.Resources.SortAscending">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:BrightIdeasSoftware.Properties.Resources.SortDescending">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
         <member name="T:BrightIdeasSoftware.GraphicAdornment">
             <summary>
             An adorment is the common base for overlays and decorations.

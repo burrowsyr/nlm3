@@ -16,6 +16,7 @@ using NestedLayerManager.Imaging;
 using NestedLayerManager.CellEdit;
 using NestedLayerManager.NodeControl;
 using NestedLayerManager.MouseClick;
+using NestedLayerManager.IO.Data;
 using NestedLayerManager.IO;
 using NestedLayerManager.Nodes;
 using NestedLayerManager.Nodes.Base;
@@ -53,12 +54,18 @@ namespace NestedLayerManager.SubControls
         public NlmButtonPanelRight ButtonPanelRight;
         public NlmButtonPanelSide ButtonPanelSide;
 
+        //  Put NLM settings here:
+        public NlmSettings Settings;
+
         #endregion
 
         #region Constructor
 
-        public NlmTreeListView()
+        public NlmTreeListView( NlmSettings settings )
         {
+            //  Settings get passed by NestedLayerManager - this feels a little inelegant but
+            //getting to them via NlmSetting.Parent.Settings doesn't seem to work all the time.
+            Settings = settings;
             DisabledHandles = new List<UIntPtr>();
 
             Margin = new Padding(0);
@@ -219,7 +226,13 @@ namespace NestedLayerManager.SubControls
         // Dispose of all classes that require disposing.
         protected override void Dispose(bool disposing)
         {
-            MaxIO.SaveData(this, NodeControl);
+            MaxListener.PrintToListener("==== Disposing NlmTreeListView ====");
+            if (Settings.writeNLM2){
+                NodeControl.Create.NLM2.writeNLMProp( this, NodeControl );
+            }
+            else{
+                MaxIO.SaveData(this, NodeControl);
+            }
             NlmColumns.Dispose();
             NodeControl.Dispose();
             //TODO:

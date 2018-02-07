@@ -319,7 +319,7 @@ namespace NestedLayerManager.Events
 #if Max2013 || Max2014
                             layer.IsHidden = false;
 #endif
-#if Max2015
+#if Max2015 || Max2016
                             layer.Hide(false, false);
 #endif
                         }
@@ -347,7 +347,7 @@ namespace NestedLayerManager.Events
 #if Max2013 || Max2014
                             layer.IsHidden = true;
 #endif
-#if Max2015
+#if Max2015 || Max2016
                             layer.Hide(true, false);
 #endif
                             listView.DisabledHandles.Add(layerHandle);
@@ -371,7 +371,7 @@ namespace NestedLayerManager.Events
 #if Max2013 || Max2014
                             maxLayer.IsHidden = false;
 #endif
-#if Max2015
+#if Max2015 || Max2016
                             maxLayer.Hide(false, false);
 #endif
                             continue;
@@ -596,9 +596,20 @@ namespace NestedLayerManager.Events
 
         public static void onSettings(Object sender, ClickEventArgs e)
         {
-            // Show the settings window.
-            NlmSettingsWindow settingsWindow = new NlmSettingsWindow(e.ListView.Parent);
+            //  Show the settings window, we're casting to NestedLayerManager so we get access
+            //to NlmSettings().
+            NlmSettingsWindow settingsWindow = new NlmSettingsWindow( e.ListView.Parent as NestedLayerManager );
             settingsWindow.ShowDialog(e.ListView);
+        }
+
+
+
+        public static void onChangeSetting( Object sender, ClickEventArgs e )
+        {
+            //  Use the CheckBox name to find the appropriate config field and set it.
+            NlmCheckBox CB = ( NlmCheckBox )sender;
+            var nlmSetting = e.Settings.GetType().GetField( CB.Name );
+            nlmSetting.SetValue( e.Settings, CB.Checked );
         }
 
         #endregion

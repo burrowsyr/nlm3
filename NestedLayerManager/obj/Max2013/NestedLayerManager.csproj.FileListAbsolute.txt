@@ -14,3 +14,14 @@ C:\Users\Tim\Desktop\Nested_Layer_Manager_3 - Copy\NestedLayerManager\bin\Max201
 C:\Users\Tim\Desktop\Nested_Layer_Manager_3 - Copy\NestedLayerManager\bin\Max2013\ObjectListView.xml
 C:\Users\Tim\Desktop\Nested_Layer_Manager_3 - Copy\NestedLayerManager\obj\Max2013\NestedLayerManager.pdb
 Y:\Personal\Tim\Tools\Nested_Layer_Manager_3\NestedLayerManager\bin\Max2013\ObjectListView.xml
+C:\Users\clarkes\Documents\Visual Studio 2012\Projects\nlm3-master\NestedLayerManager\obj\Max2013\NestedLayerManager.csprojResolveAssemblyReference.cache
+C:\Users\clarkes\Documents\Visual Studio 2012\Projects\nlm3-master\NestedLayerManager\obj\Max2013\NestedLayerManager.csproj.GenerateResource.Cache
+C:\Users\clarkes\Documents\Visual Studio 2012\Projects\nlm3-master\NestedLayerManager\obj\Max2013\NestedLayerManager.dll
+C:\Users\clarkes\Documents\Visual Studio 2012\Projects\nlm3-master\NestedLayerManager\obj\Max2013\NestedLayerManager.pdb
+C:\Users\clarkes\Documents\Visual Studio 2012\Projects\nlm3-master\NestedLayerManager\obj\Max2013\NestedLayerManager.Properties.Resources.resources
+C:\Users\clarkes\Documents\Visual Studio 2012\Projects\nlm3-master\NestedLayerManager\bin\Max2016\Readme.txt
+C:\Users\clarkes\Documents\Visual Studio 2012\Projects\nlm3-master\NestedLayerManager\bin\Max2016\NestedLayerManager.dll
+C:\Users\clarkes\Documents\Visual Studio 2012\Projects\nlm3-master\NestedLayerManager\bin\Max2016\NestedLayerManager.pdb
+C:\Users\clarkes\Documents\Visual Studio 2012\Projects\nlm3-master\NestedLayerManager\bin\Max2016\ObjectListView.dll
+C:\Users\clarkes\Documents\Visual Studio 2012\Projects\nlm3-master\NestedLayerManager\bin\Max2016\ObjectListView.pdb
+C:\Users\clarkes\Documents\Visual Studio 2012\Projects\nlm3-master\NestedLayerManager\bin\Max2016\ObjectListView.xml

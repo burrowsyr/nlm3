@@ -1,5 +1,6 @@
 ﻿using System;
 using NestedLayerManager.SubControls;
+using NestedLayerManager.IO;
 
 namespace NestedLayerManager.Events.CustomArgs
 {
@@ -10,5 +11,12 @@ namespace NestedLayerManager.Events.CustomArgs
             ListView = listView;
         }
         public NlmTreeListView ListView { get; set; }
+
+
+        public ClickEventArgs(NlmSettings settings)
+        {
+            Settings = settings;
+        }
+        public NlmSettings Settings { get; set; }
     }
 }

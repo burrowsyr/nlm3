@@ -6,3 +6,7 @@ Y:\Personal\Tim\Tools\Nested_Layer_Manager_3\NestedLayerManager\bin\Max2015Debug
 Y:\Personal\Tim\Tools\Nested_Layer_Manager_3\NestedLayerManager\bin\Max2015Debug\ObjectListView.xml
 Y:\Personal\Tim\Tools\Nested_Layer_Manager_3\NestedLayerManager\obj\Max2015Debug\NestedLayerManager.dll
 Y:\Personal\Tim\Tools\Nested_Layer_Manager_3\NestedLayerManager\obj\Max2015Debug\NestedLayerManager.pdb
+C:\Users\clarkes\Documents\Visual Studio 2012\Projects\nlm3-master\NestedLayerManager\obj\Max2015Debug\NestedLayerManager.csprojResolveAssemblyReference.cache
+C:\Users\clarkes\Documents\Visual Studio 2012\Projects\nlm3-master\NestedLayerManager\obj\Max2015Debug\NestedLayerManager.Properties.Resources.resources
+C:\Users\clarkes\Documents\Visual Studio 2012\Projects\nlm3-master\NestedLayerManager\obj\Max2015Debug\NestedLayerManager.csproj.GenerateResource.Cache
+C:\Users\clarkes\Documents\Visual Studio 2012\Projects\nlm3-master\NestedLayerManager\obj\Max2015Debug\NestedLayerManager.dll

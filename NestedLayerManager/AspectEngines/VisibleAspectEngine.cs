@@ -71,7 +71,7 @@ namespace NestedLayerManager.AspectEngines
                 if (maxLayer != null)
                     maxLayer.IsHidden = !(Boolean)newValue;
 #endif
-#if Max2015
+#if Max2015 || Max2016
                 if (maxLayer != null)
                     maxLayer.Hide(!(Boolean)newValue, false);
 #endif
